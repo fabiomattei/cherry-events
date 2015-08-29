@@ -7,7 +7,7 @@ function RCEV_events_list( $atts, $content ) {
 	global $post;
 	
 	$atts = array( // a few default values
-			'posts_per_page' => '4',
+			'posts_per_page' => '3',
 			'post_type' => RCEV_SLUG
 			);
 			
