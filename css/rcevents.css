@@ -1,0 +1,19 @@
+.eventboxcontainer {
+	text-align: center;
+}
+.eventbox {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction:     column;
+	flex-direction:         column;
+	-webkit-justify-content: center;
+	-ms-flex-pack:           center;
+	justify-content:         center;
+}
+.singleeventbox {
+	flex: 1 1 100px;
+	margin: 0px 0 25px !important;
+	padding: 0 25px 0;
+}

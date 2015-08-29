@@ -7,26 +7,26 @@ function RCEV_events_list( $atts, $content ) {
 	global $post;
 	
 	$atts = array( // a few default values
-			'posts_per_page' => '3',
-			'post_type' => RCEV_SLUG
-			);
-			
+		'posts_per_page' => '3',
+		'post_type' => RCEV_SLUG
+		);
+		
 	$posts = new WP_Query( $atts );
-	$out = '';
-	
-    ob_start();
+	$out = '<div class="eventboxcontainer">
+					<div class="eventbox">';
 	
 	if ($posts->have_posts()) {
-		
+	
 	    while ($posts->have_posts()) {
 	        $posts->the_post();
-			
-	        $out .= '<div class="events_box">
-	            <h4><a href="'.get_permalink().'" title="' . get_the_title() . '">'.get_the_title() .'</a></h4>
+	
+	        $out .= '<div class="singleeventbox">
+				<p class="eventboxthumbnail">'.get_the_post_thumbnail().'</p>
+	            <h5><a href="'.get_permalink().'" title="' . get_the_title() . '">'.get_the_title() .'</a></h5>
 	            <p class="event_desc">'.get_the_content().'</p>';
 	            // add here more...
 	        $out .= '</div>';
-			
+	
 	/* these arguments will be available from inside $content
 	    get_permalink()  
 	    get_the_content()
@@ -37,16 +37,19 @@ function RCEV_events_list( $atts, $content ) {
 	*/
 	
 		} // end while loop
-		
+	
 	} else {
 		return; // no posts found
 	}
+	$out .= '</div>'; // ending eventbox
+	$out .= '</div>'; // ending eventboxcontainer
+	
+	ob_start();
 
 	echo $out;
 	
-    return ob_get_clean();
+return ob_get_clean();
 }
-add_shortcode( 'RCEVList', 'RCEV_events_list' );
+add_shortcode( 'RCEventsListHome', 'RCEV_events_list' );
 
-
-// usage [RCEVList]
+// usage [RCEventsListHom]
