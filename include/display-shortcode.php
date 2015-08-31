@@ -49,7 +49,7 @@ function RCEV_events_list( $atts, $content ) {
 
 	echo $out;
 	
-return ob_get_clean();
+	return ob_get_clean();
 }
 add_shortcode( 'RCEventsListHome', 'RCEV_events_list' );
 
