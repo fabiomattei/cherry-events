@@ -13,6 +13,7 @@ function RCEV_events_list( $atts, $content ) {
 		
 	$posts = new WP_Query( $atts );
 	$out = '<div class="eventboxcontainer">
+				<h5>Events</h5>
 					<div class="eventbox">';
 	
 	if ($posts->have_posts()) {
