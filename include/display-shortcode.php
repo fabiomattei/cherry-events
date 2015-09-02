@@ -12,21 +12,21 @@ function RCEV_events_list( $atts, $content ) {
 		);
 		
 	$posts = new WP_Query( $atts );
-	$out = '<div class="eventboxcontainer">
+	$out = '<div class="externaleventboxcontainer">
 				<h5>Events</h5>
-					<div class="eventbox">';
+					<div class="eventboxcontainer">
+						<ul>';
 	
 	if ($posts->have_posts()) {
 	
 	    while ($posts->have_posts()) {
 	        $posts->the_post();
+			
+			
 	
-	        $out .= '<div class="singleeventbox">
-				<p class="eventboxthumbnail">'.get_the_post_thumbnail().'</p>
-	            <h5><a href="'.get_permalink().'" title="' . get_the_title() . '">'.get_the_title() .'</a></h5>
-	            <p class="event_desc">'.get_the_content().'</p>';
-	            // add here more...
-	        $out .= '</div>';
+	        $out .= '<li><input type="checkbox" checked><i></i>' . 
+				'<h2>' . get_the_title() . '</h2>'.
+			    '<p>'.get_the_content().'</p></li>';
 	
 	/* these arguments will be available from inside $content
 	    get_permalink()  
