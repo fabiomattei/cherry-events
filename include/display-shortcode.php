@@ -13,7 +13,9 @@ function RCEV_events_list( $atts, $content ) {
 		
 	$posts = new WP_Query( $atts );
 	$out = '<div class="externaleventboxcontainer">
-				<h5>Events</h5>
+					<div class="eventstitlewrapper">
+						<h5 class="eventstitle">Events</h5>
+					</div>
 					<div class="eventboxcontainer">
 						<ul>';
 	
