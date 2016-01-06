@@ -1,37 +1,31 @@
-.eventboxcontainer {
-	
-}
-.eventbox {
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-flex-direction: column;
-	-ms-flex-direction:     column;
-	flex-direction:         column;
-	-webkit-justify-content: center;
-	-ms-flex-pack:           center;
-	justify-content:         center;
-}
-.singleeventbox {
-	flex: 1 1 100px;
-	margin: 0px 0 25px !important;
-	padding: 0 25px 0;
+
+.accordion-title-wrapper {
+	background-image: url("../img/dots.png");
+	background-repeat: repeat-x;
+	background-position: center;
+	height: 150px;
+	line-height: 150px;
+	text-align: center;
 }
 
-
-
+.accordion-title {
+    display: inline;
+    text-align: center;
+    background-color: $beige1;
+    padding: 12px 30px;
+}
 
 /* Accordion CSS */
 
-.transition, .eventboxcontainer p, .eventboxcontainer ul li i:before, .eventboxcontainer ul li i:after {
+.transition, .accordion-box-container p, .accordion-box-container ul li i:before, .accordion-box-container ul li i:after {
   transition: all 0.25s ease-in-out;
 }
 
-.flipIn, .eventboxcontainer h1, .eventboxcontainer ul li {
+.flipIn, .accordion-box-container h1, .accordion-box-container ul li {
   animation: flipdown 0.5s ease both;
 }
 
-.no-select, .eventboxcontainer h2 {
+.no-select, .accordion-box-container h2 {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -41,14 +35,14 @@
   user-select: none;
 }
 
-.eventboxcontainer {
+.accordion-box-container {
   min-height: 0;
   margin: 0;
   padding: 0 25px 0;
 }
 
 @media (max-width: 550px) {
-  .eventboxcontainer {
+  .accordion-box-container {
     box-sizing: border-box;
     transform: translate(0, 0);
     max-width: 100%;
@@ -58,7 +52,7 @@
   }
 }
 
-.eventboxcontainer h2 {
+.accordion-box-container h2 {
   font-size: 18px !important;
   line-height: 10px;
   font-weight: 00;
@@ -68,7 +62,7 @@
   cursor: pointer;
 }
 
-.eventboxcontainer p {
+.accordion-box-container p {
   color: rgba(48, 69, 92, 0.8);
   font-size: 15px;
   line-height: 26px;
@@ -82,52 +76,52 @@
   z-index: 2;
 }
 
-.eventboxcontainer ul {
+.accordion-box-container ul {
   list-style: none;
   perspective: 900;
   padding: 0;
   margin: 0;
 }
-.eventboxcontainer ul li {
+.accordion-box-container ul li {
   position: relative;
   padding: 4px;
   margin: 0;
 }
-.eventboxcontainer ul li:nth-child(n + 2) {
+.accordion-box-container ul li:nth-child(n + 2) {
   border-top: 1px dotted #dce7eb;
 }
-.eventboxcontainer ul li:nth-of-type(1) {
+.accordion-box-container ul li:nth-of-type(1) {
   animation-delay: 0.5s;
 }
-.eventboxcontainer ul li:nth-of-type(2) {
+.accordion-box-container ul li:nth-of-type(2) {
   animation-delay: 0.75s;
 }
-.eventboxcontainer ul li:nth-of-type(3) {
+.accordion-box-container ul li:nth-of-type(3) {
   animation-delay: 1s;
 }
-.eventboxcontainer ul li:last-of-type {
+.accordion-box-container ul li:last-of-type {
   padding-bottom: 0;
 }
-.eventboxcontainer ul li i {
+.accordion-box-container ul li i {
   position: absolute;
   transform: translate(-6px, 0);
   margin-top: 16px;
   right: 0;
 }
-.eventboxcontainer ul li i:before, .eventboxcontainer ul li i:after {
+.accordion-box-container ul li i:before, .accordion-box-container ul li i:after {
   content: "";
   position: absolute;
   background-color: #ff6873;
   width: 3px;
   height: 9px;
 }
-.eventboxcontainer ul li i:before {
+.accordion-box-container ul li i:before {
   transform: translate(-2px, 0) rotate(45deg);
 }
-.eventboxcontainer ul li i:after {
+.accordion-box-container ul li i:after {
   transform: translate(2px, 0) rotate(-45deg);
 }
-.eventboxcontainer ul li input[type=checkbox] {
+.accordion-box-container ul li input[type=checkbox] {
   position: absolute;
   cursor: pointer;
   width: 100%;
@@ -135,16 +129,16 @@
   z-index: 1;
   opacity: 0;
 }
-.eventboxcontainer ul li input[type=checkbox]:checked ~ p {
+.accordion-box-container ul li input[type=checkbox]:checked ~ p {
   margin-top: 0;
   max-height: 0;
   opacity: 0;
   transform: translate(0, 50%);
 }
-.eventboxcontainer ul li input[type=checkbox]:checked ~ i:before {
+.accordion-box-container ul li input[type=checkbox]:checked ~ i:before {
   transform: translate(2px, 0) rotate(45deg);
 }
-.eventboxcontainer ul li input[type=checkbox]:checked ~ i:after {
+.accordion-box-container ul li input[type=checkbox]:checked ~ i:after {
   transform: translate(-2px, 0) rotate(-45deg);
 }
 
